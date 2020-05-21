@@ -1,0 +1,101 @@
+$siteWidth: 600px;
+$darkColor: #000;
+$lightColor: #ffeffe;
+
+// Global Styles /////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Baloo Chettan 2", cursive;
+  line-height: 1.4;
+  background-color: hsl(44, 100%, 50%);
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// Utility /////////////////////////////
+
+.container {
+  max-width: $siteWidth;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px black solid;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-dark {
+  background: $darkColor;
+  color: $lightColor;
+}
+
+%btn-shared {
+  display: block;
+  cursor: pointer;
+  border: none;
+  padding: 1rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.btn {
+  &-dark {
+    @extend %btn-shared;
+    background: $darkColor;
+    color: $lightColor;
+    transition: all 1s;
+
+    &:hover {
+      background-color: #101010;
+      transition: all 1s;
+    }
+
+    &:active {
+      background: red;
+    }
+  }
+
+  &-wide {
+    margin: 4rem auto 2rem auto;
+    width: 60%;
+  }
+}
+
+// Styles /////////////////////////////
+
+#main-section {
+  height: 100vh;
+  width: 100%;
+
+  .container {
+    margin-top: 18%;
+    background: $lightColor;
+    border: none;
+    padding-bottom: 2rem;
+    border-radius: 15px;
+
+    .box {
+      padding: 0.5rem 0.8rem;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+  }
+}
+
+@import "media";
